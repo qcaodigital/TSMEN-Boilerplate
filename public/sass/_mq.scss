@@ -1,0 +1,28 @@
+//Add media query breakpoints here//
+@mixin breakpoint($label) {
+	@if $label == sm {
+		@media screen and (min-width: 550px) {
+			@content;
+		}
+	}
+	@if $label == md {
+		@media screen and (min-width: 725px) {
+			@content;
+		}
+	}
+	@if $label == lg {
+		@media screen and (min-width: 990px) {
+			@content;
+		}
+	}
+	@if $label == xl {
+		@media screen and (min-width: 1250px) {
+			@content;
+		}
+	}
+	@if $label == xxl {
+		@media screen and (min-width: 1620px) {
+			@content;
+		}
+	}
+}
