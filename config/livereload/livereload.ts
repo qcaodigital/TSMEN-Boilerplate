@@ -9,18 +9,18 @@ interface IConfig {
 
 export default class LiveReloadServerInst {
 	app: Express;
-	devCheck: string | undefined;
+	devCheck: boolean;
 	config: IConfig;
 	liveReloadServer: any;
 
-	constructor(app: Express, devCheck: string | undefined, config: IConfig) {
+	constructor(app: Express, devCheck: boolean, config: IConfig) {
 		this.app = app;
 		this.devCheck = devCheck;
 		this.config = config;
 	}
 
 	init(): any {
-		if (this.devCheck === 'development') {
+		if (this.devCheck) {
 			// open livereload high port and start to watch public directory for changes
 			this.liveReloadServer = livereload.createServer({
 				exts: this.config.exts,
@@ -31,8 +31,8 @@ export default class LiveReloadServerInst {
 	}
 
 	watch(timeout: number): void {
+		console.log('Live Reload Server watching changes.');
 		this.liveReloadServer.server.once('connection', () => {
-			console.log('Live Reload Server watching changes.');
 			setTimeout(() => {
 				this.liveReloadServer.refresh('/');
 			}, timeout);

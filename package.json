@@ -5,8 +5,8 @@
 	"main": "app.js",
 	"scripts": {
 		"start": "tsnd --respawn app.ts",
-		"watch:sass": "node-sass -w public/sass/index.scss public/stylesheets/index.css",
-		"dev": "npm run start & npm run watch:sass"
+		"watch:sass": "start node-sass -w public/sass/index.scss public/stylesheets/index.css",
+		"dev": "start npm run start & start npm run watch:sass"
 	},
 	"author": "Quan Cao",
 	"license": "ISC",
