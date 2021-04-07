@@ -13,7 +13,7 @@ const app = express();
 //Watcher server will watch all files in root dir
 //Only runs if second argument returns true, if it does not return true, the code below will do nothing
 const liveReloadServer = new LiveReloadServer(app, process.env.NODE_ENV === 'development', {
-	exts: ['ejs', 'js', 'ts', 'css', 'scss'],
+	exts: ['ejs', 'js', 'ts', 'css'],
 	dirs: [__dirname + '/public', __dirname + '/views'],
 }).init();
 

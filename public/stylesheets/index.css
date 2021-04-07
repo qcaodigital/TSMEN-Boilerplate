@@ -1,6 +1,10 @@
 :root {
-  --main-font: '';
-  --main-color: ''; }
+  --main-font: "";
+  --main-color: "";
+}
 
 #test {
-  color: blue; }
+  color: red;
+}
+
+/*# sourceMappingURL=index.css.map */

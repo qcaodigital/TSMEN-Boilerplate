@@ -5,7 +5,7 @@
 	"main": "app.js",
 	"scripts": {
 		"start": "tsnd --respawn app.ts",
-		"watch:sass": "start node-sass -w public/sass/index.scss public/stylesheets/index.css",
+		"watch:sass": "start sass --watch public/sass/index.scss:public/stylesheets/index.css",
 		"dev": "start npm run start & start npm run watch:sass"
 	},
 	"author": "Quan Cao",
